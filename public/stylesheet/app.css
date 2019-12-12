@@ -1,0 +1,13 @@
+i.icon{
+	font-size:2em
+}
+.container.segment{
+	margin-top : 7em
+}
+#poses{
+	width : 40%;
+	height :50%
+}
+#delete{
+	display: inline
+}

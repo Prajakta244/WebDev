@@ -1,0 +1,33 @@
+<% include partials/header %>
+<div class = "ui main text container segment">
+	<div class = "ui header center aligned">
+		Quite Your MIND, Free Your BODY!!!
+	</div>
+	<hr>
+	<div class = "ui top attached">
+		<div class = "ui divided items">
+			<% blogs.forEach(function(blog){ %>
+			<div class = "item">
+				<div class ="image">
+					<img src = "<%= blog.image %>" style = "margin-top:15%" >
+				</div>
+				<div class = "content">
+					<a class =  "header" href = "/blogs/<%= blog._id %>"><%= blog.title %></a>
+					<div class ="meta">
+						<span><%= blog.created.toDateString() %></span>					
+					</div>
+					<div class ="description">
+						<% if(blog.body && blog.body.length > 0) { %>
+							<%- blog.body.substring(0, 200) %>...	
+		<%}%>
+					</div>
+					<div class = "extra">
+						<a class = "ui floated basic purple button" href = "/blogs/<%= blog._id %>">Read More</a>
+					</div>
+				</div>	
+	</div>
+<% }) %> 			
+		</div>
+	</div>
+</div>
+
